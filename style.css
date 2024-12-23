@@ -1,0 +1,198 @@
+/* Reset dan pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#star-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2018/04/06/14/01/star-3291492_960_720.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    animation: starBackground 30s linear infinite;
+}
+
+@keyframes starBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+nav button {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #666;
+}
+
+/* Kontainer produk */
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+button.add-to-cart {
+    background-color: #00bfff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button.add-to-cart:hover {
+    background-color: #008cba;
+}
+
+/* Keranjang */
+#cart {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#cart ul {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#cart ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#cart ul li span {
+    cursor: pointer;
+    color: #f00;
+}
+
+#checkout, #close-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#checkout:hover, #close-cart:hover {
+    background-color: #45a049;
+}
+
+/* Cancel modal */
+#cancel-cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+}
+
+#cancel-cart button {
+    background-color: #f00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancel-cart button:hover {
+    background-color: #d00;
+}
